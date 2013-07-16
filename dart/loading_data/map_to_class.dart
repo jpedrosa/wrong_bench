@@ -1,3 +1,5 @@
+library MapToClass;
+
 import "../lib/lang.dart";
 import "dart:math" as DM;
 
@@ -14,7 +16,9 @@ bm(desc, fn()) {
   sw.start();
   runMultipleTimes(fn);
   sw.stop();
-  print("${desc}: ${sw.elapsedMilliseconds}ms");
+  var delta = sw.elapsedMilliseconds;
+  print("${desc}: ${delta}ms");
+  return delta;
 }
 
 
