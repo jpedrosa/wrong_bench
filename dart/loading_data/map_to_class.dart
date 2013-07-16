@@ -138,41 +138,43 @@ loadSampleClassAFields(data) {
   for (k in data.keys) {
     switch (k) {
       case "field1":
-        o.field1 = data["field1"];
+        o.field1 = data[k];
         break;
       case "field2":
-        o.field2 = data["field2"];
+        o.field2 = data[k];
         break;
       case "field3":
-        o.field3 = data["field3"];
+        o.field3 = data[k];
         break;
       case "field4":
-        o.field4 = data["field4"];
+        o.field4 = data[k];
         break;
       case "field5":
-        o.field5 = data["field5"];
+        o.field5 = data[k];
         break;
       case "field6":
-        o.field6 = data["field6"];
+        o.field6 = data[k];
         break;
       case "field7":
-        o.field7 = data["field7"];
+        o.field7 = data[k];
         break;
       case "field8":
-        o.field8 = data["field8"];
+        o.field8 = data[k];
         break;
       case "field9":
-        o.field9 = data["field9"];
+        o.field9 = data[k];
         break;
       case "field10":
-        o.field10 = data["field10"];
+        o.field10 = data[k];
         break;
       case "field11":
-        o.field11 = data["field11"];
+        o.field11 = data[k];
         break;
       case "field12":
-        o.field12 = data["field12"];
+        o.field12 = data[k];
         break;
+      default:
+        throw "Unexpected data key: ${k}";
     }
   }
   return o;
@@ -183,60 +185,62 @@ loadSampleClassBFields(data) {
   for (k in data.keys) {
     switch (k) {
       case "field1":
-        o.field1 = data["field1"];
+        o.field1 = data[k];
         break;
       case "field2":
-        o.field2 = data["field2"];
+        o.field2 = data[k];
         break;
       case "field3":
-        o.field3 = data["field3"];
+        o.field3 = data[k];
         break;
       case "field4":
-        o.field4 = data["field4"];
+        o.field4 = data[k];
         break;
       case "field5":
-        o.field5 = data["field5"];
+        o.field5 = data[k];
         break;
       case "field6":
-        o.field6 = data["field6"];
+        o.field6 = data[k];
         break;
       case "field7":
-        o.field7 = data["field7"];
+        o.field7 = data[k];
         break;
       case "field8":
-        o.field8 = data["field8"];
+        o.field8 = data[k];
         break;
       case "field9":
-        o.field9 = data["field9"];
+        o.field9 = data[k];
         break;
       case "field10":
-        o.field10 = data["field10"];
+        o.field10 = data[k];
         break;
       case "field11":
-        o.field11 = data["field11"];
+        o.field11 = data[k];
         break;
       case "field12":
-        o.field12 = data["field12"];
+        o.field12 = data[k];
         break;
       case "field13":
-        o.field13 = data["field13"];
+        o.field13 = data[k];
         break;
       case "field14":
-        o.field14 = data["field14"];
+        o.field14 = data[k];
         break;
       case "field15":
-        o.field15 = data["field15"];
+        o.field15 = data[k];
         break;
       case "field16":
-        o.field16 = data["field16"];
+        o.field16 = data[k];
         break;
+      default:
+        throw "Unexpected data key: ${k}";
     }
   }
   return o;
 }
 
 loadData(data) {
-  var k, o, r = [], fields, fk;
+  var k, o, r = [];
   for (k in data.keys) {
     switch (k) {
       case "SampleClassA":
