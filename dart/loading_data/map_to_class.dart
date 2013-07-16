@@ -1,5 +1,21 @@
-import "../../../reluzir/lang/lib/lang.dart";
+import "../lib/lang.dart";
 import "dart:math" as DM;
+
+
+runMultipleTimes(fn()) {
+  for (var i = 0; i < 10000; i++) {
+    fn();
+  }
+}
+
+bm(desc, fn()) {
+  runMultipleTimes(fn); // Warm up some.
+  var sw = new Stopwatch();
+  sw.start();
+  runMultipleTimes(fn);
+  sw.stop();
+  print("${desc}: ${sw.elapsedMilliseconds}ms");
+}
 
 
 class SampleClassA {
@@ -214,7 +230,7 @@ loadSampleClassBFields(data) {
   }
   return o;
 }
-  
+
 loadData(data) {
   var k, o, r = [], fields, fk;
   for (k in data.keys) {
@@ -238,6 +254,7 @@ main() {
   var data = generateSampleData(), klasses = loadData(data); 
   p(data);
   klasses.forEach((kls) => p(kls));
+  bm("loadData", () => loadData(data));
 }
 
 
