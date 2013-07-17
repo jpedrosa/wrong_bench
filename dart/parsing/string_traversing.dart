@@ -1,3 +1,5 @@
+library StringTraversing;
+
 import "../lib/lang.dart";
 import "dart:math" as DM;
 
@@ -10,11 +12,13 @@ runMultipleTimes(fn()) {
 
 bm(desc, fn()) {
   runMultipleTimes(fn); // Warm up some.
-  var sw = new Stopwatch();
+  var z, sw = new Stopwatch();
   sw.start();
   runMultipleTimes(fn);
   sw.stop();
-  print("${desc}: ${sw.elapsedMilliseconds}ms");
+  z = "${desc}: ${sw.elapsedMilliseconds}ms";
+  print(z);
+  return z;
 }
 
 generateSampleString() {
