@@ -53,15 +53,37 @@ runCodeUnitAt(s) {
   return n;
 }
 
+indexOfCodeUnit(data, char, pos) {
+  for (int lim = data.length - 2; pos < lim; pos += 3) {
+    if (data.codeUnitAt(pos) == char || data.codeUnitAt(pos + 1) == char ||
+        data.codeUnitAt(pos + 2) == char) break;
+  }
+  for (; pos < data.length; pos++) {
+    if (data.codeUnitAt(pos) == char) return pos;
+  }
+  return -1;
+}
+
+runIndexOfCodeUnit(s) {
+  var n = 1, i = indexOfCodeUnit(s, 10, 0);
+  while (i >= 0) {
+    n++;
+    i = indexOfCodeUnit(s, 10, i + 1);
+  }
+  return n;
+}
+
 main() {
   var data = generateSampleString(); 
   p("Sample length: ${data.length} characters.");
   bm("runIndexOf", () => runIndexOf(data));
   bm("runCodeUnitAt", () => runCodeUnitAt(data));
+  bm("runIndexOfCodeUnit", () => runIndexOfCodeUnit(data));
   var e = 900001,
     v1 = runIndexOf(data),
     v2 = runCodeUnitAt(data),
-    b = e == v1 && e == v2;
+    v3 = runIndexOfCodeUnit(data),
+    b = e == v1 && e == v2 && e == v3;
   p("Litmus test: ${b}");
 }
 

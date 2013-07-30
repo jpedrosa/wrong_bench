@@ -17,10 +17,12 @@ main() {
     pd("Sample length: ${sampleData.length} characters.");
     pd(bm("runIndexOf", () => runIndexOf(sampleData)));
     pd(bm("runCodeUnitAt", () => runCodeUnitAt(sampleData)));
+    pd(bm("runIndexOfCodeUnit", () => runIndexOfCodeUnit(sampleData)));
     var e = 900001,
       v1 = runIndexOf(sampleData),
       v2 = runCodeUnitAt(sampleData),
-      b = e == v1 && e == v2; 
+      v3 = runIndexOfCodeUnit(sampleData),
+      b = e == v1 && e == v2 && e == v3;
     p(pd("Litmus test: ${b}"));
   });
 }
