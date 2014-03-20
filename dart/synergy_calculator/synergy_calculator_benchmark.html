@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Synergy Calculator Benchmark</title>
+  <link href="sc_bench_theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h3>Synergy Calculator Benchmark</h3>
+  <div class="sc-bench-panel">
+    (JavaScript Port <button id="sc_bench_run_js_port_button">Run</button>) . . .
+    (Dart or dart2js <button id="sc_bench_run_dart_button">Run</button>)
+    <div syle="clear:both"></div>
+    (JavaScript Port Worker <button id="sc_bench_run_js_port_worker_button">Run</button>) . . .
+    (Dart or dart2js Isolate<button id="sc_bench_run_dart_isolate_button">Run</button>)
+    <div syle="clear:both"></div>
+    Number of Zodiacs: 
+    <select id="sc_bench_number_of_zodiacs_select">
+      <option>11</option>
+      <option>12</option>
+      <option>13</option>
+    </select>
+    &nbsp; &nbsp; &nbsp; Number of Runs: 
+    <select id="sc_bench_number_of_runs_select">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+    <div syle="clear:both"></div>
+    Status: 
+    <span id="sc_bench_status">idle.</span>
+    <div syle="clear:both"></div>
+    <table class="sc-bench-stats-table">
+      <thead>
+        <tr>
+          <th class="sc-bench-stats-table-header">Bench Type</th>
+          <th class="sc-bench-stats-table-header">11 zodiacs<br />Avg. Time (# runs)</th>
+          <th class="sc-bench-stats-table-header">12 zodiacs<br />Avg. Time (# runs)</th>
+          <th class="sc-bench-stats-table-header">13 zodiacs<br />Avg. Time (# runs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JavaScript Port</td>
+          <td id="sc_bench_stats_table_js_port_11"></td>
+          <td id="sc_bench_stats_table_js_port_12"></td>
+          <td id="sc_bench_stats_table_js_port_13"></td>
+        </tr>
+        <tr class="sc-bench-stats-table-dart-row">
+          <td>Dart or dart2js</td>
+          <td id="sc_bench_stats_table_dart_11"></td>
+          <td id="sc_bench_stats_table_dart_12"></td>
+          <td id="sc_bench_stats_table_dart_13"></td>
+        </tr>
+        <tr>
+          <td>JavaScript Port Worker</td>
+          <td id="sc_bench_stats_table_js_port_worker_11"></td>
+          <td id="sc_bench_stats_table_js_port_worker_12"></td>
+          <td id="sc_bench_stats_table_js_port_worker_13"></td>
+        </tr>
+        <tr class="sc-bench-stats-table-dart-row">
+          <td>Dart or dart2js Isolate</td>
+          <td id="sc_bench_stats_table_dart_isolate_11"></td>
+          <td id="sc_bench_stats_table_dart_isolate_12"></td>
+          <td id="sc_bench_stats_table_dart_isolate_13"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div syle="clear:both"></div>
+    Logs: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <button id="sc_bench_clear_logs_button">Clear Logs</button>
+    <div syle="clear:both"></div>
+    <textarea id="sc_bench_log_ta" class="sc-bench-log-ta" spellcheck=false wrap=off></textarea>
+    <div syle="clear:both"></div>
+    <div style="float:left" class="sc-bench-comparison-times">
+      Comparison times:
+      <div syle="clear:both"></div>
+      11 zodiacs may take less than 10 seconds.
+      <div syle="clear:both"></div>
+      12 zodiacs may take less than 1 minute.
+      <div syle="clear:both"></div>
+      13 zodiacs may take less than 14 minutes.
+    </div>
+    <div style="float:left" class="sc-bench-algorithm-information">
+      Algorithm information:
+      <div syle="clear:both"></div>
+      11 zodiacs take 11! permutations = 39,916,800 iterations.
+      <div syle="clear:both"></div>
+      12 zodiacs take 12! permutations = 479,001,600 iterations.
+      <div syle="clear:both"></div>
+      13 zodiacs take 13! permutations = 6,227,020,800 iterations.
+    </div>
+  </div>
+	<script type="text/javascript" src="js_port_synergy_calculator.js"></script>
+	<script type="text/javascript" src="js_runner.js"></script>
+  <script type="application/dart" src="dart_runner.dart"></script>
+  <script src="dart.js"></script>
+</body>
+</html>

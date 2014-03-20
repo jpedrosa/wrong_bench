@@ -1,0 +1,41 @@
+
+.sc-bench-panel {
+	background-color: #F0F0F0;
+	width: 700px;
+	height: 680px;
+	padding: 8px;
+}
+
+.sc-bench-log-ta {
+	width: 680px;
+	height: 250px;
+}
+
+.sc-bench-stats-table {
+	border: 2px solid white;
+	background-color: white;
+}
+
+.sc-bench-stats-table td {
+	text-align: center;
+}
+
+.sc-bench-stats-table-header {
+	background-color: rgb(203, 203, 156);
+}
+
+.sc-bench-stats-table-dart-row {
+	background-color: #F0F0F0;
+}
+
+.sc-bench-comparison-times {
+	border: 1px solid gray;
+	margin-right: 8px;
+	padding: 6px;
+}
+
+.sc-bench-algorithm-information {
+	border: 1px solid gray;
+	padding: 6px;
+}
+
